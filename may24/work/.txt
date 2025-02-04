@@ -1,0 +1,28 @@
+CREATE TABLE `user` (
+    `user_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `first_name` VARCHAR(50) NOT NULL,
+    `last_name` VARCHAR(50) NOT NULL,
+    `email` VARCHAR(100) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `points` BIGINT NOT NULL DEFAULT 0
+);
+
+CREATE TABLE `hotel_booking` (
+    `hotel_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `room_type` VARCHAR(50) NOT NULL,
+    `room_number` INT NOT NULL,
+    `date_start` DATE NOT NULL,
+    `date_end` DATE NOT NULL
+);
+
+CREATE TABLE `bookings` (
+    `booking_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `user_id` BIGINT UNSIGNED NOT NULL,
+    `hotel_id` BIGINT UNSIGNED NOT NULL,
+    `adults` INT NOT NULL,
+    `kids` INT NOT NULL,
+    `date_start` DATE NOT NULL,
+    `date_end` DATE NOT NULL,
+    FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`) ON DELETE CASCADE,
+    FOREIGN KEY (`hotel_id`) REFERENCES `hotel_booking` (`hotel_id`) ON DELETE CASCADE
+);
