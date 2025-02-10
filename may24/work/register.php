@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         try {
             // Check if email already exists
-            $stmt = $pdo->prepare("SELECT email FROM user WHERE email = ?");
+            $stmt = $conn->prepare("SELECT email FROM user WHERE email = ?");
             $stmt->execute([$email]);
 
             if ($stmt->rowCount() > 0) {
@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
                 // Insert user into database
-                $stmt = $pdo->prepare("INSERT INTO user (first_name, last_name, email, password, user_type_id) VALUES (?, ?, ?, ?, ?)");
+                $stmt = $conn->prepare("INSERT INTO user (first_name, last_name, email, password, user_type_id) VALUES (?, ?, ?, ?, ?)");
                 $stmt->execute([$first_name, $last_name, $email, $hashed_password, $user_type_id]);
 
                 echo "Registration successful! <a href='login.php'>Login here</a>";
@@ -61,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label>User Type:</label>
         <select name="user_type_id" required>
-            <option value="1">Regular User</option>
+            <option value="1">Standard User - For individual, small group and families</option>
             <option value="2">Admin</option>
         </select><br>
 
