@@ -1,0 +1,35 @@
+upload to GitHub
+
+non  tech
+ui feedback
+ux feedback
+observation of use
+consider what info about the users you might need like age, gender and role they are playing like staff/customer
+
+questionairee and sceanario doc with observation record
+
+
+
+tech
+quality and structure of code
+code review of secure programming
+review of database and queries
+
+feed back formsand comments
+
+
+
+
+still create feeback systems for things I haven't made
+
+
+report
+submit one report - start by explaining two audiences and how you will collect feedback
+split into sections which show each feedback system, who its for, how and why it is designed in that way. scale 1-10 and comments and why do you want the feedback
+
+come back and write up the feedback and make use of graphs
+
+split the report into technical and non technical feedback
+at the bottom have a summary with a list of things you would improve with evidence
+
+extra appendix that has all of the data and print screens of the form
